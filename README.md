@@ -25,3 +25,9 @@
 ## 许可证
 
 MIT
+
+## 安装
+
+在 VS Code 扩展商店搜索 `读出来`，或点击下方链接直接安装：
+
+[在 VS Code Marketplace 安装]((https://marketplace.visualstudio.com/items?itemName=NineNeedles.nineneedles&ssr=false#review-details))
