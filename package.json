@@ -1,0 +1,57 @@
+{
+  "name": "nineneedles",
+  "displayName": "读出来",
+  "description": "使用微软Edge TTS语音朗读Markdown和PDF文档，支持倍速、快进快退",
+  "version": "1.3.0",
+  "publisher": "nineneedles",
+  "icon": "icon.png",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "nineneedles.startReading",
+        "title": "读出来: 开始朗读",
+        "icon": "$(play)"
+      },
+      {
+        "command": "nineneedles.stopReading",
+        "title": "读出来: 停止朗读",
+        "icon": "$(debug-stop)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "nineneedles.startReading",
+          "when": "resourceLangId == markdown || resourceExtname == .pdf",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "nineneedles.startReading",
+        "key": "ctrl+alt+r"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node esbuild.js",
+    "package": "npx @vscode/vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.24.0"
+  },
+  "dependencies": {
+    "msedge-tts": "^2.0.4",
+    "pdfjs-dist": "3.11.174"
+  }
+}
